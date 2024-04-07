@@ -1781,6 +1781,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5644396515920278523, guid: 28dffa72b5c1a0f4f81ba10feb9469bb, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 2dbb053ac92752240aedd478151fbb5b, type: 2}
     - target: {fileID: 6691652969750807166, guid: 28dffa72b5c1a0f4f81ba10feb9469bb, type: 3}
       propertyPath: m_Name
       value: Stairs_OneMeter

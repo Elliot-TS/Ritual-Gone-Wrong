@@ -155,3 +155,11 @@ crashlytics-build.properties
 \[Aa]ssets\[Ss]treamingAssets\aa.meta
 \[Aa]ssets\[Ss]treamingAssets\aa\*
 
+
+
+
+
+
+### Extra Stuff
+/ProjectSettings/Packages/com.unity.probuilder/Settings.json
+\ProjectSettings\Packages\com.unity.probuilder\Settings.json

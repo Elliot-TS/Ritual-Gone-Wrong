@@ -1,5 +1,9 @@
 fileFormatVersion: 2
+<<<<<<<< HEAD:Assets/Materials/Floor.mat.meta
 guid: 2dbb053ac92752240aedd478151fbb5b
+========
+guid: 3cf9fce93542a07999ffb3c4404bc4af
+>>>>>>>> Elliot:Assets/Materials/Player Mat.mat.meta
 NativeFormatImporter:
   externalObjects: {}
   mainObjectFileID: 2100000

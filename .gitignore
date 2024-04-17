@@ -75,7 +75,6 @@ crashlytics-build.properties
 /[Aa]ssets/[Ss]treamingAssets/aa.meta
 /[Aa]ssets/[Ss]treamingAssets/aa/*
 
-
 ## BACKSLASHES FOR FOLDERS
 
 # This .gitignore file should be placed at the root of your Unity project directory
@@ -156,10 +155,8 @@ crashlytics-build.properties
 \[Aa]ssets\[Ss]treamingAssets\aa\*
 
 
-
-
-
-
 ### Extra Stuff
 /ProjectSettings/Packages/com.unity.probuilder/Settings.json
 \ProjectSettings\Packages\com.unity.probuilder\Settings.json
+# Zip files (e.g. from assets)
+*.zip

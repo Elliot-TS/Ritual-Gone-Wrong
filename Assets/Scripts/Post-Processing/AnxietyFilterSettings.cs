@@ -11,7 +11,7 @@ public class AnxietyFilterSettings: VolumeComponent, IPostProcessComponent
     public bool IsActive() {
         return strength.value > 0f;
      }
-    public bool IsTileCompable() {
+    public bool IsTileCompatible() {
         return false;
     }
 }

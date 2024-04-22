@@ -1,19 +1,20 @@
 using UnityEngine.Rendering.Universal;
 
-public class AnxietyRendererFeature: ScriptableRendererFeature
+public class AnxietyRendererFeature : ScriptableRendererFeature
 {
-    AnxietyRenderPass anxietyRenderPass;
+    AnxietyFilterRenderPass anxietyFilterRenderPass;
 
-    public override void Create() 
+    public override void Create()
     {
-        anxietyRenderPass = new AnxietyFilterRenderPass();
+        anxietyFilterRenderPass = new AnxietyFilterRenderPass();
         name = "AnxietyFilter";
     }
 
     public override void AddRenderPasses(ScriptableRenderer renderer, ref RenderingData renderingData)
     {
-        if (blurRenderPass.Setup(renderer)) {
-            renderer.EnqueuePass(anxietyRenderPass);
+        if(anxietyFilterRenderPass.Setup(renderer))
+        {
+            renderer.EnqueuePass(anxietyFilterRenderPass);
         }
     }
 }

@@ -16,7 +16,7 @@ public class AnxietyFilterRenderPass : ScriptableRenderPass
         settings = VolumeManager.instance.stack.GetComponent<AnxietyFilterSettings>();
         renderPassEvent = RenderPassEvent.BeforeRenderingPostProcessing;
 
-        if (blurSettings != null && settings.IsActive()) {
+        if (settings != null && settings.IsActive()) {
             material = new Material(Shader.Find("PostProcessing/AnxietyFilter"));
             return true;
         }

@@ -15,6 +15,7 @@ public class EventClick : MonoBehaviour, IPointerDownHandler, IPointerUpHandler,
     }
     public void OnPointerDown(PointerEventData eventData)
     {
+        
         Debug.Log("pointer down");
     }
     public void OnPointerUp(PointerEventData eventData)
@@ -25,6 +26,7 @@ public class EventClick : MonoBehaviour, IPointerDownHandler, IPointerUpHandler,
     public void OnPointerClick(PointerEventData eventData)
     {
         Debug.Log("pointer clicked");
+        Debug.Log(eventData.pointerClick);
     }
     
     public void OnPointerEnter(PointerEventData eventData)

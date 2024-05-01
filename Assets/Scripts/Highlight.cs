@@ -10,10 +10,16 @@ public class Highlight : MonoBehaviour
     [SerializeField]
     private List<Renderer> renderers;
     [SerializeField]
-    private Color color = Color.white;
+    private Color color = Color.HSVToRGB(0.2f, 0.7f, 0.1f, false);
+    public bool On = false;
 
     //helper list to cache all the materials ofd this object
     private List<Material> materials;
+
+    private void Update()
+    {
+        ToggleHighlight(On);
+    }
 
     //Gets all the materials from each renderer
     private void Awake()

@@ -9,16 +9,18 @@ public class Highlight : MonoBehaviour
     //we assign all the renderers here through the inspector
     [SerializeField]
     private List<Renderer> renderers;
-    [SerializeField]
-    private Color color = Color.HSVToRGB(0.2f, 0.7f, 0.1f, false);
-    public bool On = false;
+
+    private float brightness = 0.1f;
+    private Color color;
 
     //helper list to cache all the materials ofd this object
     private List<Material> materials;
 
     private void Update()
     {
-        ToggleHighlight(On);
+        // Strobe the brightness between 0.2 and 0.5
+        brightness = Mathf.PingPong(Time.time, 0.3f) + 0.2f;
+        color = Color.HSVToRGB(0.2f, 0.7f, brightness, false);
     }
 
     //Gets all the materials from each renderer

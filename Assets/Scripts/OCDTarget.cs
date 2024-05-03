@@ -5,6 +5,7 @@ using UnityEngine.EventSystems;
 
 public class OCDTarget : MonoBehaviour, IPointerClickHandler
 {
+    private bool once = true;
     // Start is called before the first frame update
     void Start()
     {
@@ -14,17 +15,20 @@ public class OCDTarget : MonoBehaviour, IPointerClickHandler
     // Update is called once per frame
     void Update()
     {
-        
+        if (once) {
+            Enable();
+            once = false;
+        }
     }
 
     public void Enable()
     {
-        gameObject.GetComponent<Highlight>().ToggleHighlight(true);
+        gameObject.GetComponent<Highlight>().On = true;
     }
 
     public void OnPointerClick(PointerEventData eventData)
     {
-        gameObject.GetComponent<Highlight>().ToggleHighlight(false);
+        gameObject.GetComponent<Highlight>().On = false;
     }
 }
 

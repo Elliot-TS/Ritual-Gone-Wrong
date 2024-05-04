@@ -12,6 +12,7 @@ public class DoorOpen : MonoBehaviour
     public float speed;
 
     public bool opening;
+    public bool check;
 
     void Update()
     {
@@ -19,15 +20,26 @@ public class DoorOpen : MonoBehaviour
 
         if(opening)
         {
-            if(Math.Abs(currentAngle.y) < Math.Abs(angleOpen))
+            if(angleOpen > angleClose)
             {
-                door.transform.localEulerAngles = Vector3.Lerp(currentAngle, new Vector3(currentAngle.x, angleOpen, currentAngle.z), speed * Time.deltaTime);
+                if(Math.Abs(currentAngle.y) < Math.Abs(angleOpen))
+                {
+                    door.transform.localEulerAngles = Vector3.Lerp(currentAngle, new Vector3(currentAngle.x, angleOpen, currentAngle.z), speed * Time.deltaTime);
+                }
+            }
+
+            else
+            {
+                if(Math.Abs(currentAngle.y) < Math.Abs(angleOpen))
+                {
+                    door.transform.localEulerAngles = Vector3.Lerp(currentAngle, new Vector3(currentAngle.x, angleOpen, currentAngle.z), speed * Time.deltaTime);
+                }
             }
         }
 
         else
         {
-            if(currentAngle.y > angleClose)
+            if(Math.Abs(currentAngle.y) > Math.Abs(angleClose))
             {
                 door.transform.localEulerAngles = Vector3.Lerp(currentAngle, new Vector3(currentAngle.x, angleClose, currentAngle.z), speed * Time.deltaTime);
             }

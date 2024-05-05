@@ -18,7 +18,7 @@ public class DoorOpen : MonoBehaviour
     {
         Vector3 currentAngle = door.transform.localEulerAngles;
 
-        if(opening)
+        if(opening && check)
         {
             if(angleOpen > angleClose)
             {
@@ -37,7 +37,7 @@ public class DoorOpen : MonoBehaviour
             }
         }
 
-        else
+        else if(!opening && check)
         {
             if(Math.Abs(currentAngle.y) > Math.Abs(angleClose))
             {

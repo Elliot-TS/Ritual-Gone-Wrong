@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 3338281588285910553}
   - component: {fileID: 5644396515920278523}
   - component: {fileID: 7433249356291882226}
-  - component: {fileID: 8788118791114879252}
+  - component: {fileID: 7822740938019557462}
   m_Layer: 0
   m_Name: Stairs_OneMeter
   m_TagString: Untagged
@@ -1701,7 +1701,7 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6691652969750807166}
   m_Mesh: {fileID: 0}
---- !u!64 &8788118791114879252
+--- !u!64 &7822740938019557462
 MeshCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}

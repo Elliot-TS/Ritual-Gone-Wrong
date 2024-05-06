@@ -7,6 +7,7 @@ public class PlayerController : MonoBehaviour
     private Vector2 prevMousePos;
     public float rotate_sensitivity = 0.1f;
     public float speed = 1f;
+    public bool pickedKey = false;
 
     //Trigger Check Variables
     public bool pressed = false;
@@ -23,6 +24,7 @@ public class PlayerController : MonoBehaviour
         set { objectHit = value; }  // set method
     }
     private string objectHit;
+
 
     // Start is called before the first frame update
     void Start()

@@ -1,33 +1,42 @@
-using System.Collections;
+/*using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class KeyPickUp : MonoBehaviour
 {
-    public GameObject pickUpText;
+    public GameObject obj;
 
-    public bool inReach;
-    public bool picked;
+    public bool picked = false;
+    public bool check = false;
 
     void Start()
     {
-        inReach = false;
-        pickUpText.SetActive(false);
-    }
-
-
-    void OnTriggerEnter(Collider collider)
-    {
-        if (collider.gameObject.name == "Player")
-        {
-            GameVariables.keyCount += 2;
-            Destroy(gameObject);
-        }
     }
 
 
     void Update()
     {
+        //Checking the trigger state, whether or not E is pressed
+        check = GameObject.Find("Player").GetComponent<PlayerController>().triggered;
+
+        string objCheck = GameObject.Find("Player").GetComponent<PlayerController>().ObjectHit;
         
+        if( (objCheck != null) && (objCheck.Equals(obj.name)) )    
+            {}
+        else    
+            return;
+
+
+        float objDistance = GameObject.Find("Player").GetComponent<PlayerController>().objDistance;
+        
+        if( objDistance > 2.5 || objDistance < 0 )     
+        {
+            return;
+        }
+
+        GameObject.Find("Player").GetComponent<PlayerController>().pickedKey = true;
+        Destroy(obj);
+
     }
 }
+*/

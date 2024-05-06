@@ -24,9 +24,18 @@ public class MoveObject : MonoBehaviour
 
         string objCheck = GameObject.Find("Player").GetComponent<PlayerController>().ObjectHit;
         
-        if( (objCheck != null) && (objCheck.Equals(obj.name)) )     {}
-        else
+        if( (objCheck != null) && (objCheck.Equals(obj.name)) )    
+            {}
+        else    
             return;
+
+
+        float objDistance = GameObject.Find("Player").GetComponent<PlayerController>().objDistance;
+        
+        if( objDistance > 2.5 || objDistance < 0 )     
+        {
+            return;
+        }
 
         
         if(check)

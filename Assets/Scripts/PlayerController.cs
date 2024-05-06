@@ -36,7 +36,7 @@ public class PlayerController : MonoBehaviour
     private float yRotation;
 
 
-    
+
 
 
 
@@ -55,7 +55,30 @@ public class PlayerController : MonoBehaviour
 
         MovementInput = new Vector3(Input.GetAxis("Horizontal"), 0f, Input.GetAxis("Vertical"));
         MouseInput = new Vector2(Input.GetAxis("Mouse X"), Input.GetAxis("Mouse Y"));
+        if (Input.GetKey(KeyCode.W))
+        {
+            MovePlayer(Vector3.forward * Speed * Time.deltaTime);
+        }
+        else if (Input.GetKey(KeyCode.S))
+        {
+            MovePlayer(Vector3.back * Speed * Time.deltaTime);
+        }
 
+        if (Input.GetKey(KeyCode.A))
+        {
+            MovePlayer(Vector3.left * Speed * Time.deltaTime);
+        }
+        else if (Input.GetKey(KeyCode.D))
+        {
+            MovePlayer(Vector3.right * Speed * Time.deltaTime);
+        }
+
+        Vector2 mousePos = Input.mousePosition;
+        if (Input.GetMouseButton(0))
+        {
+            RotatePlayer(-(mousePos.x - prevMousePos.x) * rotate_sensitivity);
+        }
+        prevMousePos = mousePos;
 
         MovePlayer();
         MoveCamera();
@@ -64,13 +87,15 @@ public class PlayerController : MonoBehaviour
 
     void MovePlayer(Vector3 direction)
     {
-        Vector3 movementVector = transform.TransformDirection(MovementInput) * Speed;
-        Body.velocity = new Vector3(movementVector.x, Body.velocity.y, movementVector.z);
+        transform.Translate(direction);
 
-        if (Input.GetKeyDown(KeyCode.Space))
-        {
-            Body.AddForce(Vector3.up * JumpAcceleration, ForceMode.Impulse);
-        }
+        // Vector3 movementVector = transform.TransformDirection(MovementInput) * Speed;
+        // Body.velocity = new Vector3(movementVector.x, Body.velocity.y, movementVector.z);
+
+        // if (Input.GetKeyDown(KeyCode.Space))
+        // {
+        //     Body.AddForce(Vector3.up * JumpAcceleration, ForceMode.Impulse);
+        // }
     }
 
     void RotatePlayer(float angle)
@@ -81,7 +106,7 @@ public class PlayerController : MonoBehaviour
     void MovePlayer()
     {
         Vector3 movementVector = transform.TransformDirection(MovementInput) * Speed;
-        Body.velocity = new Vector3(movementVector.x, Body.velocity.y, movementVector.z);
+        Body.AddForce(new Vector3(movementVector.x, Body.velocity.y, movementVector.z));
 
         if (Input.GetKeyDown(KeyCode.Space))
         {

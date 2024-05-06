@@ -582,12 +582,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 859642808003540128bab977e3ac5492, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  door: {fileID: 106052982}
-  angleOpen: 70
-  angleClose: 0
+  AngleOpen: 0
+  AngleClose: 90
   speed: 3
-  opening: 0
-  check: 1
+  IsOpen: 0
 --- !u!1 &167098957
 GameObject:
   m_ObjectHideFlags: 0
@@ -1148,12 +1146,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 859642808003540128bab977e3ac5492, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  door: {fileID: 309478180}
-  angleOpen: 90
-  angleClose: 0
+  AngleOpen: 0
+  AngleClose: 90
   speed: 3
-  opening: 0
-  check: 1
+  IsOpen: 0
 --- !u!1 &319106401
 GameObject:
   m_ObjectHideFlags: 0
@@ -2879,12 +2875,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 859642808003540128bab977e3ac5492, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  door: {fileID: 618285192}
-  angleOpen: 360
-  angleClose: 290
+  AngleOpen: 0
+  AngleClose: 90
   speed: 3
-  opening: 0
-  check: 0
+  IsOpen: 0
 --- !u!1001 &640174506
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3052,12 +3046,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 859642808003540128bab977e3ac5492, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  door: {fileID: 689774738}
-  angleOpen: 70
-  angleClose: 0
+  AngleOpen: 0
+  AngleClose: 90
   speed: 3
-  opening: 0
-  check: 1
+  IsOpen: 0
 --- !u!1 &723962319 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: -2556881493233473257, guid: 13f2b1e574c890063ab3144fa2ea69c5, type: 3}
@@ -3075,12 +3067,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 859642808003540128bab977e3ac5492, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  door: {fileID: 723962319}
-  angleOpen: 359
-  angleClose: 290
+  AngleOpen: 0
+  AngleClose: 90
   speed: 3
-  opening: 0
-  check: 0
+  IsOpen: 0
 --- !u!43 &755064688
 Mesh:
   m_ObjectHideFlags: 0
@@ -4089,12 +4079,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 859642808003540128bab977e3ac5492, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  door: {fileID: 967804269}
-  angleOpen: 360
-  angleClose: 290
+  AngleOpen: 0
+  AngleClose: 90
   speed: 3
-  opening: 0
-  check: 0
+  IsOpen: 0
 --- !u!1001 &970263412
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4930,12 +4918,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 859642808003540128bab977e3ac5492, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  door: {fileID: 1140299160}
-  angleOpen: 90
-  angleClose: 0
+  AngleOpen: 0
+  AngleClose: 90
   speed: 3
-  opening: 0
-  check: 1
+  IsOpen: 0
 --- !u!43 &1146918138
 Mesh:
   m_ObjectHideFlags: 0
@@ -5108,12 +5094,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 859642808003540128bab977e3ac5492, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  door: {fileID: 1175166101}
-  angleOpen: 360
-  angleClose: 290
+  AngleOpen: 0
+  AngleClose: 90
   speed: 3
-  opening: 0
-  check: 0
+  IsOpen: 0
 --- !u!1 &1218981775
 GameObject:
   m_ObjectHideFlags: 0
@@ -5659,12 +5643,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 859642808003540128bab977e3ac5492, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  door: {fileID: 1319098508}
-  angleOpen: 360
-  angleClose: 270
+  AngleOpen: 0
+  AngleClose: 90
   speed: 3
-  opening: 0
-  check: 0
+  IsOpen: 0
 --- !u!1 &1320669897 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 8081352130100642617, guid: d6475acb75c93978a960552ade0d69e5, type: 3}
@@ -5682,12 +5664,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 859642808003540128bab977e3ac5492, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  door: {fileID: 1320669897}
-  angleOpen: 360
-  angleClose: 270
+  AngleOpen: 0
+  AngleClose: 90
   speed: 3
-  opening: 0
-  check: 0
+  IsOpen: 0
 --- !u!1 &1324693924
 GameObject:
   m_ObjectHideFlags: 0
@@ -8352,12 +8332,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 859642808003540128bab977e3ac5492, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  door: {fileID: 1980300221}
-  angleOpen: 90
-  angleClose: 0
+  AngleOpen: 0
+  AngleClose: 90
   speed: 3
-  opening: 0
-  check: 1
+  IsOpen: 0
 --- !u!1 &2019115300
 GameObject:
   m_ObjectHideFlags: 0
@@ -8909,7 +8887,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 56cc9ab2688c0406aaed51a80f358598, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  pickUpText: {fileID: 0}
+  pickUpText: {fileID: 935281832}
   inReach: 0
   picked: 0
 --- !u!65 &919132148777092140

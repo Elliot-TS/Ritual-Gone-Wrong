@@ -4,7 +4,8 @@ using UnityEngine;
 
 public class MoveObject : MonoBehaviour
 {
-    //public char instigate;
+    public GameObject obj;
+
     public bool check = false;
     private bool change = false;
 
@@ -18,8 +19,15 @@ public class MoveObject : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        /*if(Input.GetKey(instigate))
-            check = true; */
+        check = GameObject.Find("Player").GetComponent<PlayerController>().triggered;
+
+
+        string objCheck = GameObject.Find("Player").GetComponent<PlayerController>().ObjectHit;
+        
+        if( (objCheck != null) && (objCheck.Equals(obj.name)) )     {}
+        else
+            return;
+
         
         if(check)
         {

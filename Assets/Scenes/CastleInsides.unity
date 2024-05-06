@@ -5550,6 +5550,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 42bc19f2743144c39beb3bd724021cf7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  obj: {fileID: 1245110125}
   check: 0
 --- !u!65 &1245110133
 BoxCollider:
@@ -6798,7 +6799,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: -8679921383154817045, guid: a89094bab7fcf864f964e3650093d501, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 6.26
+      value: 6.45
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: a89094bab7fcf864f964e3650093d501, type: 3}
       propertyPath: m_LocalPosition.y

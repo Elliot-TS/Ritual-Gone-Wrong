@@ -7,7 +7,7 @@ using UnityEngine.EventSystems;
 public class OCDTarget : MonoBehaviour, IPointerClickHandler
 {
     public bool On = false;
-    private bool once = true;
+    private bool onChange = false;
     // Start is called before the first frame update
     void Start()
     {
@@ -16,10 +16,14 @@ public class OCDTarget : MonoBehaviour, IPointerClickHandler
     // Update is called once per frame
     void Update()
     {
-        if (once) {
-            Enable();
-            once = false;
+        Debug.Log("---");
+        Debug.Log(On);
+        Debug.Log(onChange);
+        if (onChange != On) {
+            if (On) Enable();
+            else Disable();
         }
+        onChange = On;
     }
 
     public void Enable()
@@ -28,10 +32,14 @@ public class OCDTarget : MonoBehaviour, IPointerClickHandler
         gameObject.GetComponent<Highlight>().On = true;
     }
 
-    public void OnPointerClick(PointerEventData eventData)
+    public void Disable()
     {
         On = false;
         gameObject.GetComponent<Highlight>().On = false;
+    }
+    public void OnPointerClick(PointerEventData eventData)
+    {
+        Disable();
     }
 }
 

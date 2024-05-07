@@ -8,17 +8,16 @@ public class OCDTarget : MonoBehaviour, IPointerClickHandler
 {
     public bool On = false;
     private bool onChange = false;
+    private OCDSystem parentOCDSystem;
     // Start is called before the first frame update
     void Start()
     {
+        parentOCDSystem = FindObjectsOfType<OCDSystem>()[0];
     }
 
     // Update is called once per frame
     void Update()
     {
-        Debug.Log("---");
-        Debug.Log(On);
-        Debug.Log(onChange);
         if (onChange != On) {
             if (On) Enable();
             else Disable();
@@ -29,16 +28,21 @@ public class OCDTarget : MonoBehaviour, IPointerClickHandler
     public void Enable()
     {
         On = true;
+        onChange = On;
+        Debug.Log(gameObject);
         gameObject.GetComponent<Highlight>().On = true;
     }
 
     public void Disable()
     {
         On = false;
+        onChange = On;
         gameObject.GetComponent<Highlight>().On = false;
     }
     public void OnPointerClick(PointerEventData eventData)
     {
+        Debug.Log(On);
+        if (On) parentOCDSystem.ObeyCompulsion();
         Disable();
     }
 }

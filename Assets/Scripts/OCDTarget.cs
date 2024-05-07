@@ -41,9 +41,7 @@ public class OCDTarget : MonoBehaviour, IPointerClickHandler
     }
     public void OnPointerClick(PointerEventData eventData)
     {
-        Debug.Log(On);
         if (On) parentOCDSystem.ObeyCompulsion();
-        Disable();
     }
 }
 

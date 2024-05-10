@@ -4,76 +4,76 @@ using System;
 using UnityEngine;
 using UnityEngine.EventSystems;
 
-public class DoorOpen : MonoBehaviour
+public class DoorOpen : MonoBehaviour, IPointerClickHandler
 {
-    //The Game Object 
-    public GameObject door;
-    public GameObject parent;
+    public float AngleOpen = 0;
+    public float AngleClose = 90;
+    public float speed = 3;
 
-    //logic variables
-    public float angleOpen;
-    public float angleClose;
-    public float speed;
+    public bool IsOpen = false;
+    private bool isOpenChange = false;
 
-    public bool opening;
-    public bool check;
+    private bool opening = false;
+    private bool closing = false;
 
 
     void Update()
-    {
+    { 
 
-        //Checking the trigger state, whether or not E is pressed
-        opening = GameObject.Find("Player").GetComponent<PlayerController>().triggered;
-
-        
-        //Checking whether the player is looking at the object or not
-        string objCheck = GameObject.Find("Player").GetComponent<PlayerController>().ObjectHit;
-
-        if( (objCheck != null) && ( (objCheck.Equals(door.name)) || (objCheck.Equals(parent.name)) ) )
-        {}
-
-        else
-        {
-            return;
-        }
-
-        /*
-        //Checking the distance from Player
-        float objDist = GameObject.Find("Player").GetComponent<PlayerController>().objDistance;
+        /*float objDist = GameObject.Find("Player").GetComponent<PlayerController>().objDistance;
         
         if(objDist > 2 || objDist < 0)
         {
             return;
         }*/
-
-
-        Vector3 currentAngle = door.transform.localEulerAngles;
-
-        if(opening && check)
+        
+        if (isOpenChange != IsOpen) 
         {
-            if(angleOpen > angleClose)
-            {
-                if(Math.Abs(currentAngle.y) < Math.Abs(angleOpen))
-                {
-                    door.transform.localEulerAngles = Vector3.Lerp(currentAngle, new Vector3(currentAngle.x, angleOpen, currentAngle.z), speed * Time.deltaTime);
-                }
-            }
-
-            else
-            {
-                if(Math.Abs(currentAngle.y) < Math.Abs(angleOpen))
-                {
-                    door.transform.localEulerAngles = Vector3.Lerp(currentAngle, new Vector3(currentAngle.x, angleOpen, currentAngle.z), speed * Time.deltaTime);
-                }
-            }
+            if (IsOpen) Open();
+            else Close();
         }
+        isOpenChange = IsOpen;
 
-        else if(!opening && check)
-        {
-            if(Math.Abs(currentAngle.y) > Math.Abs(angleClose))
-            {
-                door.transform.localEulerAngles = Vector3.Lerp(currentAngle, new Vector3(currentAngle.x, angleClose, currentAngle.z), speed * Time.deltaTime);
-            }
+        if (opening) {
+            openDoor();
         }
+        else if (closing) {
+            closeDoor();
+        }
+    }
+
+    private void openDoor() {
+        Vector3 currentAngle = transform.localEulerAngles;
+        transform.localEulerAngles = Vector3.Lerp(currentAngle, new Vector3(currentAngle.x, AngleOpen, currentAngle.z), speed * Time.deltaTime);
+        if (Math.Abs(currentAngle.y - AngleOpen) < 0.01) opening = false;
+    }
+
+    private void closeDoor() {
+        Vector3 currentAngle = transform.localEulerAngles;
+        transform.localEulerAngles = Vector3.Lerp(currentAngle, new Vector3(currentAngle.x, AngleClose, currentAngle.z), speed * Time.deltaTime);
+        if (Math.Abs(currentAngle.y - AngleClose) < 0.01) closing = false;
+    }
+
+    public void Open() {
+        IsOpen = true;
+        isOpenChange = IsOpen;
+        opening = true;
+        closing = false;
+        Debug.Log("Opening");
+    }
+
+    public void Close() {
+        IsOpen = false;
+        isOpenChange = IsOpen;
+        opening = false;
+        closing = true;
+        Debug.Log("Closing");
+    }
+
+    public void OnPointerClick(PointerEventData eventData)
+    {
+        if (IsOpen) Close();
+        else Open();
+        Debug.Log("Click");
     }
 }

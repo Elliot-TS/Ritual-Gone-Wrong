@@ -37,7 +37,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0b2db86121404754db890f4c8dfe81b2, type: 3}
   m_Name: Bloom
   m_EditorClassIdentifier: 
-  active: 1
+  active: 0
   skipIterations:
     m_OverrideState: 0
     m_Value: 1
@@ -46,16 +46,16 @@ MonoBehaviour:
     m_Value: 0.9
   intensity:
     m_OverrideState: 1
-    m_Value: 0.58
+    m_Value: 0.39
   scatter:
     m_OverrideState: 1
-    m_Value: 0.65
+    m_Value: 0.94
   clamp:
     m_OverrideState: 0
     m_Value: 65472
   tint:
-    m_OverrideState: 0
-    m_Value: {r: 1, g: 1, b: 1, a: 1}
+    m_OverrideState: 1
+    m_Value: {r: 0.8679245, g: 0.7404752, b: 0.24973297, a: 1}
   highQualityFiltering:
     m_OverrideState: 0
     m_Value: 0
@@ -84,10 +84,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c5e1dc532bcb41949b58bc4f2abfbb7e, type: 3}
   m_Name: LensDistortion
   m_EditorClassIdentifier: 
-  active: 1
+  active: 0
   intensity:
     m_OverrideState: 1
-    m_Value: -0.251
+    m_Value: 0.48
   xMultiplier:
     m_OverrideState: 0
     m_Value: 1
@@ -99,7 +99,7 @@ MonoBehaviour:
     m_Value: {x: 0.5, y: 0.5}
   scale:
     m_OverrideState: 1
-    m_Value: 2.51
+    m_Value: 0.84
 --- !u!114 &-5856822492843143201
 MonoBehaviour:
   m_ObjectHideFlags: 3
@@ -121,10 +121,10 @@ MonoBehaviour:
     m_Value: {x: 0.5, y: 0.5}
   intensity:
     m_OverrideState: 1
-    m_Value: 0.45
+    m_Value: 0.41
   smoothness:
     m_OverrideState: 1
-    m_Value: 0.31
+    m_Value: 0.439
   rounded:
     m_OverrideState: 0
     m_Value: 0
@@ -146,16 +146,16 @@ MonoBehaviour:
     m_Value: 0
   contrast:
     m_OverrideState: 1
-    m_Value: -11.2
+    m_Value: 0
   colorFilter:
     m_OverrideState: 0
     m_Value: {r: 1, g: 1, b: 1, a: 1}
   hueShift:
     m_OverrideState: 1
-    m_Value: -0
+    m_Value: -149
   saturation:
     m_OverrideState: 1
-    m_Value: 7.6
+    m_Value: 0
 --- !u!114 &11400000
 MonoBehaviour:
   m_ObjectHideFlags: 0

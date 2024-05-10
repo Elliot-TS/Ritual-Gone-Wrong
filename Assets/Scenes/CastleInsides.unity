@@ -933,9 +933,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 56cc9ab2688c0406aaed51a80f358598, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  obj: {fileID: 0}
-  picked: 0
-  check: 0
 --- !u!1001 &237037382
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -5838,7 +5835,7 @@ Rigidbody:
   m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 0
+  m_Constraints: 80
   m_CollisionDetection: 0
 --- !u!1 &1319098508 stripped
 GameObject:
@@ -8319,12 +8316,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d27522221a5a44aa9863f7dae234e353, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  boxOB: {fileID: 1859999170}
-  keyOBNeeded: {fileID: 0}
-  openText: {fileID: 2045340652}
-  keyMissingText: {fileID: 1218981775}
-  inReach: 0
-  isOpen: 0
 --- !u!43 &1901708113
 Mesh:
   m_ObjectHideFlags: 0
@@ -8935,7 +8926,6 @@ GameObject:
   - component: {fileID: 2056997461}
   - component: {fileID: 2056997463}
   - component: {fileID: 2056997462}
-  - component: {fileID: 2056997465}
   - component: {fileID: 2056997464}
   m_Layer: 0
   m_Name: brass_candleholder_04
@@ -9025,27 +9015,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   obj: {fileID: 2056997460}
   check: 0
---- !u!65 &2056997465
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2056997460}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Size: {x: 0.004082767, y: 0.0036468238, z: 0.008352599}
-  m_Center: {x: -0.0000009835929, y: -0.00000068638485, z: 0.0041716467}
 --- !u!1 &2082518988
 GameObject:
   m_ObjectHideFlags: 0
@@ -9263,9 +9232,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 56cc9ab2688c0406aaed51a80f358598, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  obj: {fileID: 0}
-  picked: 0
-  check: 0
 --- !u!65 &919132148777092140
 BoxCollider:
   m_ObjectHideFlags: 0

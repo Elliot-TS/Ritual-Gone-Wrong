@@ -13,7 +13,6 @@ public class PlayerController : MonoBehaviour
 
 
     public CharacterController CharCtrl;
-    private Vector2 prevMousePos;
     public float rotate_sensitivity = 0.8f;
     //public float speed = 1f;
     public float zoom_sensitivity = 0.8f;
@@ -41,10 +40,6 @@ public class PlayerController : MonoBehaviour
 
 
 
-
-
-
-
     // Start is called before the first frame update
     void Start()
     {
@@ -60,51 +55,16 @@ public class PlayerController : MonoBehaviour
         MovementInput = new Vector3(Input.GetAxis("Horizontal"), 0f, Input.GetAxis("Vertical"));
         MouseInput = new Vector2(Input.GetAxis("Mouse X"), Input.GetAxis("Mouse Y"));
 
-     
-
-        
-
         MovePlayer();
 
         Vector2 mousePos = Input.mousePosition;
         if (Input.GetKey(KeyCode.LeftShift))
         {
-            //RotatePlayer(-(mousePos.x - prevMousePos.x) * rotate_sensitivity);
             MoveCamera();
-
         }
 
-
-        //if (Input.GetKey(KeyCode.LeftShift))
-        //{
-        //    Debug.Log("left shift pressed!");
-        //    MoveCamera();
-        //}
-        //else
-        //{
-
-        //}
-
-
     }
 
-    void MovePlayer(Vector3 direction)
-    {
-        transform.Translate(direction);
-
-        // Vector3 movementVector = transform.TransformDirection(MovementInput) * Speed;
-        // Body.velocity = new Vector3(movementVector.x, Body.velocity.y, movementVector.z);
-
-        // if (Input.GetKeyDown(KeyCode.Space))
-        // {
-        //     Body.AddForce(Vector3.up * JumpAcceleration, ForceMode.Impulse);
-        // }
-    }
-
-    void RotatePlayer(float angle)
-    {
-        transform.Rotate(Vector3.up, angle);
-    }
 
     void MovePlayer()
     {
@@ -124,8 +84,9 @@ public class PlayerController : MonoBehaviour
     {
         xRotation -= MouseInput.y * RotationSensitivity;
         yRotation -= MouseInput.x * RotationSensitivity;
+        transform.Rotate(0f, MouseInput.x * RotationSensitivity, 0f);
 
         transform.Rotate(0f, MouseInput.x * RotationSensitivity, 0f);
-        PlayerCamera.transform.localRotation = Quaternion.Euler(xRotation, 0f, 0f);
+        //PlayerCamera.transform.localRotation = Quaternion.Euler(xRotation, 0f, 0f);
     }
 }

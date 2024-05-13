@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UIElements;
 
 public class PlayerController : MonoBehaviour
 {
@@ -11,11 +12,11 @@ public class PlayerController : MonoBehaviour
     // original code:
 
 
+    public CharacterController CharCtrl;
     private Vector2 prevMousePos;
     public float rotate_sensitivity = 0.8f;
     //public float speed = 1f;
     public float zoom_sensitivity = 0.8f;
-
 
 
     // // // // // // //
@@ -23,7 +24,9 @@ public class PlayerController : MonoBehaviour
     public Input PlayerInput;
     public Transform PlayerCamera;
     public Rigidbody Body;
-    public float Speed = 1f;
+    public float Acceleration = 1f;
+    public float MaxSpeed = 4f;
+
     public float Sensitivity;
     public float RotationSensitivity = 0.8f;
     public float ZoomSensitivity = 0.8f;
@@ -32,6 +35,7 @@ public class PlayerController : MonoBehaviour
 
     private Vector3 MovementInput;
     private Vector2 MouseInput;
+    private Vector2 PointerLoc;
     private float xRotation;
     private float yRotation;
 
@@ -44,8 +48,9 @@ public class PlayerController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        PlayerCamera = GetComponent<Camera>().transform;
         Body = GetComponent<Rigidbody>();
+        Body.freezeRotation = true;
+        PointerLoc = Input.mousePosition;
     }
 
     // Update is called once per frame
@@ -54,33 +59,32 @@ public class PlayerController : MonoBehaviour
 
         MovementInput = new Vector3(Input.GetAxis("Horizontal"), 0f, Input.GetAxis("Vertical"));
         MouseInput = new Vector2(Input.GetAxis("Mouse X"), Input.GetAxis("Mouse Y"));
-        if (Input.GetKey(KeyCode.W))
-        {
-            MovePlayer(Vector3.forward * Speed * Time.deltaTime);
-        }
-        else if (Input.GetKey(KeyCode.S))
-        {
-            MovePlayer(Vector3.back * Speed * Time.deltaTime);
-        }
 
-        if (Input.GetKey(KeyCode.A))
-        {
-            MovePlayer(Vector3.left * Speed * Time.deltaTime);
-        }
-        else if (Input.GetKey(KeyCode.D))
-        {
-            MovePlayer(Vector3.right * Speed * Time.deltaTime);
-        }
+     
 
-        Vector2 mousePos = Input.mousePosition;
-        if (Input.GetMouseButton(0))
-        {
-            RotatePlayer(-(mousePos.x - prevMousePos.x) * rotate_sensitivity);
-        }
-        prevMousePos = mousePos;
+        
 
         MovePlayer();
-        MoveCamera();
+
+        Vector2 mousePos = Input.mousePosition;
+        if (Input.GetKey(KeyCode.LeftShift))
+        {
+            //RotatePlayer(-(mousePos.x - prevMousePos.x) * rotate_sensitivity);
+            MoveCamera();
+
+        }
+
+
+        //if (Input.GetKey(KeyCode.LeftShift))
+        //{
+        //    Debug.Log("left shift pressed!");
+        //    MoveCamera();
+        //}
+        //else
+        //{
+
+        //}
+
 
     }
 
@@ -104,8 +108,10 @@ public class PlayerController : MonoBehaviour
 
     void MovePlayer()
     {
-        Vector3 movementVector = transform.TransformDirection(MovementInput) * Speed;
-        Body.AddForce(new Vector3(movementVector.x, Body.velocity.y, movementVector.z));
+        Vector3 movementVector = transform.TransformDirection(MovementInput) * Acceleration;
+        Body.AddForce(new Vector3(movementVector.x, 0f, movementVector.z));
+        Body.velocity = Vector3.ClampMagnitude(Body.velocity, MaxSpeed);
+
 
         if (Input.GetKeyDown(KeyCode.Space))
         {

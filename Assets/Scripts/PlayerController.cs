@@ -10,10 +10,7 @@ public class PlayerController : MonoBehaviour
     // https://www.youtube.com/watch?v=b1uoLBp2I1w
 
     // original code:
-
-
-    public CharacterController CharCtrl;
-    public float rotate_sensitivity = 0.8f;
+    public float rotate_sensitivity = 0.1f;
     //public float speed = 1f;
     public float zoom_sensitivity = 0.8f;
 
@@ -21,10 +18,10 @@ public class PlayerController : MonoBehaviour
     // // // // // // //
 
     public Input PlayerInput;
-    public Transform PlayerCamera;
+    public GameObject PlayerCamera;
     public Rigidbody Body;
     public float Acceleration = 1f;
-    public float MaxSpeed = 4f;
+    public float MaxSpeed = 20f;
 
     public float Sensitivity;
     public float RotationSensitivity = 0.8f;
@@ -35,10 +32,7 @@ public class PlayerController : MonoBehaviour
     private Vector3 MovementInput;
     private Vector2 MouseInput;
     private Vector2 PointerLoc;
-    private float xRotation;
-    private float yRotation;
-
-
+    private Vector3 prevMousePos;
 
     // Start is called before the first frame update
     void Start()
@@ -57,20 +51,18 @@ public class PlayerController : MonoBehaviour
 
         MovePlayer();
 
-        Vector2 mousePos = Input.mousePosition;
-        if (Input.GetKey(KeyCode.LeftShift))
-        {
-            MoveCamera();
-        }
+        Vector3 amount = (Input.mousePosition - prevMousePos) * RotationSensitivity * Time.deltaTime;
+        if (Input.GetMouseButton(0))
+            MoveCamera(amount);
+        prevMousePos = Input.mousePosition;
 
     }
 
 
     void MovePlayer()
     {
-        Vector3 movementVector = transform.TransformDirection(MovementInput) * Acceleration;
-        Body.AddForce(new Vector3(movementVector.x, 0f, movementVector.z));
-        Body.velocity = Vector3.ClampMagnitude(Body.velocity, MaxSpeed);
+        Vector3 movementVector = transform.TransformDirection(MovementInput) * MaxSpeed * Time.deltaTime;
+        Body.velocity = movementVector;
 
 
         if (Input.GetKeyDown(KeyCode.Space))
@@ -80,13 +72,12 @@ public class PlayerController : MonoBehaviour
 
     }
 
-    void MoveCamera()
+    void MoveCamera(Vector3 amount)
     {
-        xRotation -= MouseInput.y * RotationSensitivity;
-        yRotation -= MouseInput.x * RotationSensitivity;
-        transform.Rotate(0f, MouseInput.x * RotationSensitivity, 0f);
+        transform.Rotate(0f, -amount.x, 0f);
+        PlayerCamera.transform.Rotate(amount.y, 0f, 0f);
 
-        transform.Rotate(0f, MouseInput.x * RotationSensitivity, 0f);
-        //PlayerCamera.transform.localRotation = Quaternion.Euler(xRotation, 0f, 0f);
+        // transform.Rotate(0f, MouseInput.x * RotationSensitivity, 0f);
+        // PlayerCamera.transform.localRotation = Quaternion.Euler(amount.y, 0f, 0f);
     }
 }

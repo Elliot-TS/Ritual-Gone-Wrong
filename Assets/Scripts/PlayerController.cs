@@ -109,7 +109,7 @@ public class PlayerController : MonoBehaviour
     void MovePlayer()
     {
         Vector3 movementVector = transform.TransformDirection(MovementInput) * MaxSpeed * Time.deltaTime;
-        Body.velocity = movementVector;
+        Body.velocity = new Vector3 (movementVector.x, Body.velocity.y, movementVector.z);
 
 
         if (Input.GetKeyDown(KeyCode.Space))

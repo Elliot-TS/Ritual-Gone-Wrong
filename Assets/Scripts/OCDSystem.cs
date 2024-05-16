@@ -17,15 +17,16 @@ public class OCDSystem : MonoBehaviour
     private LensDistortion lensDistortion;
 
     private bool activeCompulsion = false;
-    private float compulsionStartTime;
-    private float compulsionDuration = 10f;
-    private float compulsionAnxietyRate = 0.7f;
-    private float normalAnxietyRate = 0.1f;
-    private float anxietyDecayRate = 0.2f;
-    private double numRepeats = 4;
-    private int repeatCounter = 0;
-    private double anxiety = 0;
-    private double baseAnxiety = 0;
+    public float compulsionStartTime;
+    public float compulsionDuration = 10f;
+    public float compulsionAnxietyRate = 0.7f;
+    public float normalAnxietyRate = 0.1f;
+    public float anxietyDecayRate = 0.2f;
+    public double numRepeats = 4;
+    public int repeatCounter = 0;
+    public double anxiety = 0;
+    public double baseAnxiety = 0;
+
     // Start is called before the first frame update
     void Start()
     {

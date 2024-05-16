@@ -1,28 +1,24 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using System;
+using UnityEngine.EventSystems;
 
-public class MoveObject : MonoBehaviour
+public class MoveObject : MonoBehaviour, IPointerClickHandler
 {
-    public GameObject obj;
-
     public bool check = false;
-    private bool change = false;
 
 
     // Start is called before the first frame update
     void Start()
     {
-        
     }
+
 
     // Update is called once per frame
     void Update()
     {
-        check = GameObject.Find("Player").GetComponent<PlayerController>().triggered;
-
-
-        string objCheck = GameObject.Find("Player").GetComponent<PlayerController>().ObjectHit;
+        /*string objCheck = GameObject.Find("Player").GetComponent<PlayerController>().ObjectHit;
         
         if( (objCheck != null) && (objCheck.Equals(obj.name)) )    
             {}
@@ -35,24 +31,40 @@ public class MoveObject : MonoBehaviour
         if( objDistance > 2.5 || objDistance < 0 )     
         {
             return;
-        }
+        }*/
 
-        
+    }
+
+    public void OnPointerClick(PointerEventData eventData)
+    {
+        float dist = Vector3.Distance(GameObject.Find("Player").transform.position, this.transform.position);
+
+        if(dist > 2.5 || dist <= 0)
+            return;
+
+        check = !check;
+
         if(check)
         {
-            /*move = Input.GetAxis("Vertical") * speed * Time.deltaTime;
-            rotate = Input.GetAxis("Horizontal") * speed2 * Time.deltaTime;*/
+            this.transform.SetParent(GameObject.Find("Player").transform, true);
+            Debug.Log("Picked up "+this.name);
 
-            transform.SetParent(GameObject.Find("Player").transform, true);
+            if(gameObject.GetComponent<Rigidbody>())
+                gameObject.GetComponent<Rigidbody>().isKinematic = true;
+            
+            float playerY = GameObject.Find("Player").transform.position.y;
+            Vector3 currentPosition = transform.position;
+            currentPosition.y = playerY;
+            this.transform.position = currentPosition;
         }
 
         else
-            transform.SetParent(null, true);
-    }
+        {    
+            this.transform.SetParent(null, true);
+            Debug.Log("Dropped "+this.name);
 
-    /*private void LateUpdate()
-    {
-        transform.Translate(0f, 0f, move);
-        transform.Translate(0f, rotate, 0f);
-    }*/
+            if(gameObject.GetComponent<Rigidbody>())
+                gameObject.GetComponent<Rigidbody>().isKinematic = false;
+        }
+    }
 }

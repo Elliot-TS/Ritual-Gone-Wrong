@@ -26,14 +26,13 @@ public class KeyPickUp : MonoBehaviour, IPointerClickHandler
 
     public void OnPointerClick(PointerEventData eventData)
     {
-        float objDistance = GameObject.Find("Player").GetComponent<PlayerController>().objDistance;
-        
-        /*if( objDistance > 2.5 || objDistance < 0 )     
-        {
-            return;
-        }
+        float dist = Vector3.Distance(GameObject.Find("Player").transform.position, this.transform.position);
 
-        if (!LookCheck()) 
+        if(dist > 2.5 || dist <= 0)
+            return;
+
+
+        /*if (!LookCheck()) 
         {
             return;
         }*/

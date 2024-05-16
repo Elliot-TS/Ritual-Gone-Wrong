@@ -5405,10 +5405,10 @@ MonoBehaviour:
   PlayerCamera: {fileID: 405986080}
   Body: {fileID: 0}
   Acceleration: 1
-  MaxSpeed: 400
+  MaxSpeed: 30
   zoom_sensitivity: 0.8
   Sensitivity: 0
-  RotationSensitivity: 30
+  RotationSensitivity: 1
   ZoomSensitivity: 0.8
   JumpAcceleration: 0
 --- !u!136 &1306026272
@@ -8552,6 +8552,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d4fe86c665f600e79b7fb33811077b84, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  compulsionStartTime: 0
+  compulsionDuration: 10
+  compulsionAnxietyRate: 0.7
+  normalAnxietyRate: 0.1
+  anxietyDecayRate: 0.2
+  numRepeats: 4
+  repeatCounter: 0
+  anxiety: 0
+  baseAnxiety: 0
 --- !u!4 &1937029324
 Transform:
   m_ObjectHideFlags: 0

@@ -160,3 +160,5 @@ crashlytics-build.properties
 \ProjectSettings\Packages\com.unity.probuilder\Settings.json
 # Zip files (e.g. from assets)
 *.zip
+
+.vsconfig

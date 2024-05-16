@@ -8,7 +8,7 @@ public class ChestOpen : MonoBehaviour
     public GameObject keyOBNeeded;
     public GameObject openText;
     public GameObject keyMissingText;
-    public AudioSource openSound;
+    //public AudioSource openSound;
 
     public bool inReach;
     public bool isOpen;
@@ -49,7 +49,7 @@ public class ChestOpen : MonoBehaviour
         if (keyOBNeeded.activeInHierarchy == true && inReach && Input.GetButtonDown("Interact"))
         {
             keyOBNeeded.SetActive(true);
-            openSound.Play();
+            //openSound.Play();
             boxOB.SetBool("open", true);
             openText.SetActive(false);
             keyMissingText.SetActive(false);

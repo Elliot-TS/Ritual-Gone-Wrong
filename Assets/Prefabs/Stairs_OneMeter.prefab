@@ -1,5 +1,58 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!1 &3931899078209777350
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 4695888223227786981}
+  - component: {fileID: 557006630971066498}
+  m_Layer: 0
+  m_Name: RampCollider
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4695888223227786981
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3931899078209777350}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0.38308316, y: -0, z: -0, w: 0.9237139}
+  m_LocalPosition: {x: -0.47299194, y: -0.031, z: -0.5659523}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 5251181146848536430}
+  m_LocalEulerAnglesHint: {x: 45.05, y: 0, z: 0}
+--- !u!65 &557006630971066498
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3931899078209777350}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 1, y: 0.2409158, z: 1.8240371}
+  m_Center: {x: 0, y: 0.3795423, z: -0.050717596}
 --- !u!1 &6691652969750807166
 GameObject:
   m_ObjectHideFlags: 0
@@ -13,7 +66,7 @@ GameObject:
   - component: {fileID: 3338281588285910553}
   - component: {fileID: 5644396515920278523}
   - component: {fileID: 7433249356291882226}
-  - component: {fileID: 8788118791114879252}
+  - component: {fileID: 7822740938019557462}
   m_Layer: 0
   m_Name: Stairs_OneMeter
   m_TagString: Untagged
@@ -33,7 +86,8 @@ Transform:
   m_LocalPosition: {x: 15, y: 0, z: 60}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children: []
+  m_Children:
+  - {fileID: 4695888223227786981}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &7888231496403661731
@@ -1701,7 +1755,7 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6691652969750807166}
   m_Mesh: {fileID: 0}
---- !u!64 &8788118791114879252
+--- !u!64 &7822740938019557462
 MeshCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1718,7 +1772,7 @@ MeshCollider:
   m_LayerOverridePriority: 0
   m_IsTrigger: 0
   m_ProvidesContacts: 0
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 5
   m_Convex: 0
   m_CookingOptions: 30

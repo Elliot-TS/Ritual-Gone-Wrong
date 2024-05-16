@@ -17,8 +17,9 @@ public class DoorOpen : MonoBehaviour, IPointerClickHandler
     private bool closing = false;
 
     void Update()
-    {
-        if (isOpenChange != IsOpen) {
+    { 
+        if (isOpenChange != IsOpen) 
+        {
             if (IsOpen) Open();
             else Close();
         }

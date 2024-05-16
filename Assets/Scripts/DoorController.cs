@@ -17,50 +17,19 @@ public class DoorOpen : MonoBehaviour, IPointerClickHandler
     private bool closing = false;
 
     void Update()
-    { /*
-        <<<<<<< HEAD
-        Vector3 currentAngle = door.transform.localEulerAngles;
-
-        if(opening && check)
-        {
-            if(angleOpen > angleClose)
-            {
-                if(Math.Abs(currentAngle.y) < Math.Abs(angleOpen))
-                {
-                    door.transform.localEulerAngles = Vector3.Lerp(currentAngle, new Vector3(currentAngle.x, angleOpen, currentAngle.z), speed * Time.deltaTime);
-                }
-            }
-
-            else
-            {
-                if(Math.Abs(currentAngle.y) < Math.Abs(angleOpen))
-                {
-                    door.transform.localEulerAngles = Vector3.Lerp(currentAngle, new Vector3(currentAngle.x, angleOpen, currentAngle.z), speed * Time.deltaTime);
-                }
-            }
-        =======*/
+    { 
         if (isOpenChange != IsOpen) 
         {
             if (IsOpen) Open();
             else Close();
-            //>>>>>>> a7d3d5c63f4dbc2537f8453afcc1ce813f5cd57a
         }
         isOpenChange = IsOpen;
 
-        /*<<<<<<< HEAD
-        else if(!opening && check)
-        {
-            if(Math.Abs(currentAngle.y) > Math.Abs(angleClose))
-            {
-                door.transform.localEulerAngles = Vector3.Lerp(currentAngle, new Vector3(currentAngle.x, angleClose, currentAngle.z), speed * Time.deltaTime);
-            }
-        =======*/
         if (opening) {
             openDoor();
         }
         else if (closing) {
             closeDoor();
-            //>>>>>>> a7d3d5c63f4dbc2537f8453afcc1ce813f5cd57a
         }
     }
 

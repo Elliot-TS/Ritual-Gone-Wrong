@@ -1,7 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
-using System;
 using UnityEngine;
+using System;
 using UnityEngine.EventSystems;
 
 public class DoorOpen : MonoBehaviour, IPointerClickHandler
@@ -16,17 +16,8 @@ public class DoorOpen : MonoBehaviour, IPointerClickHandler
     private bool opening = false;
     private bool closing = false;
 
-
     void Update()
     { 
-
-        /*float objDist = GameObject.Find("Player").GetComponent<PlayerController>().objDistance;
-        
-        if(objDist > 2 || objDist < 0)
-        {
-            return;
-        }*/
-        
         if (isOpenChange != IsOpen) 
         {
             if (IsOpen) Open();

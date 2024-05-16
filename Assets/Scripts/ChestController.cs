@@ -76,77 +76,13 @@ public class ChestController: MonoBehaviour, IPointerClickHandler
     public void OnPointerClick(PointerEventData eventData)
     {
         // Get the player object and check if it has the key
+        Debug.Log("Click");
         GameObject player = GameObject.Find("Player");
         PlayerController playerController = player.GetComponent<PlayerController>();
         if (playerController.pickedKey) {
             if (IsOpen) Close();
             else Open();
-            Debug.Log("Click");
+            Debug.Log("Click with key");
         }
     }
 }
-/*{
-    public float AngleOpen = 0;
-    public float AngleClose = 90;
-    public float speed = 3;
-
-    public bool IsOpen = false;
-    private bool isOpenChange = false;
-
-    private bool opening = false;
-    private bool closing = false;
-
-    void Update()
-    { 
-        if (isOpenChange != IsOpen) 
-        {
-            if (IsOpen) Open();
-            else Close();
-        }
-        isOpenChange = IsOpen;
-
-        if (opening) {
-            openDoor();
-        }
-        else if (closing) {
-            closeDoor();
-        }
-    }
-
-    private void openDoor() {
-        Vector3 currentAngle = transform.localEulerAngles;
-        transform.localEulerAngles = Vector3.Lerp(currentAngle, new Vector3(AngleOpen, currentAngle.y, currentAngle.z), speed * Time.deltaTime);
-        Debug.Log(AngleOpen);
-        if (Math.Abs(currentAngle.x - AngleOpen) < 0.01) opening = false;
-    }
-
-    private void closeDoor() {
-        Vector3 currentAngle = transform.localEulerAngles;
-        transform.localEulerAngles = Vector3.Lerp(currentAngle, new Vector3(AngleClose, currentAngle.y, currentAngle.z), speed * Time.deltaTime);
-        if (Math.Abs(currentAngle.x - AngleClose) < 0.01) closing = false;
-    }
-
-    public void Open() {
-        IsOpen = true;
-        isOpenChange = IsOpen;
-        opening = true;
-        closing = false;
-        Debug.Log("Opening");
-    }
-
-    public void Close() {
-        IsOpen = false;
-        isOpenChange = IsOpen;
-        opening = false;
-        closing = true;
-        Debug.Log("Closing");
-    }
-
-    public void OnPointerClick(PointerEventData eventData)
-    {
-        if (IsOpen) Close();
-        else Open();
-        Debug.Log("Click");
-    }
-}
-*/

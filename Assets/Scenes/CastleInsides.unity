@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.37311924, g: 0.38073963, b: 0.3587269, a: 1}
+  m_IndirectSpecularColor: {r: 0.37311926, g: 0.38073993, b: 0.35872683, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -634,13 +634,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 859642808003540128bab977e3ac5492, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  door: {fileID: 106052982}
-  parent: {fileID: 21511752}
-  angleOpen: 70
-  angleClose: 0
+  AngleOpen: 0
+  AngleClose: 90
   speed: 3
-  opening: 0
-  check: 1
+  IsOpen: 0
 --- !u!65 &106052990
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -1200,13 +1197,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 859642808003540128bab977e3ac5492, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  door: {fileID: 309478180}
-  parent: {fileID: 491044199}
-  angleOpen: 90
-  angleClose: 0
+  AngleOpen: 0
+  AngleClose: 90
   speed: 3
-  opening: 0
-  check: 1
+  IsOpen: 0
 --- !u!65 &309478188
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -2989,13 +2983,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 859642808003540128bab977e3ac5492, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  door: {fileID: 618285192}
-  parent: {fileID: 21511752}
-  angleOpen: 360
-  angleClose: 290
+  AngleOpen: 0
+  AngleClose: 90
   speed: 3
-  opening: 0
-  check: 0
+  IsOpen: 0
 --- !u!1001 &640174506
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3163,13 +3154,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 859642808003540128bab977e3ac5492, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  door: {fileID: 689774738}
-  parent: {fileID: 21511752}
-  angleOpen: 70
-  angleClose: 0
+  AngleOpen: 0
+  AngleClose: 90
   speed: 3
-  opening: 0
-  check: 1
+  IsOpen: 0
 --- !u!65 &689774746
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -3208,13 +3196,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 859642808003540128bab977e3ac5492, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  door: {fileID: 723962319}
-  parent: {fileID: 21511752}
-  angleOpen: 359
-  angleClose: 290
+  AngleOpen: 0
+  AngleClose: 90
   speed: 3
-  opening: 0
-  check: 0
+  IsOpen: 0
 --- !u!65 &723962327
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -4244,13 +4229,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 859642808003540128bab977e3ac5492, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  door: {fileID: 967804269}
-  parent: {fileID: 21511752}
-  angleOpen: 360
-  angleClose: 290
+  AngleOpen: 0
+  AngleClose: 90
   speed: 3
-  opening: 0
-  check: 0
+  IsOpen: 0
 --- !u!65 &967804277
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -5026,13 +5008,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 859642808003540128bab977e3ac5492, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  door: {fileID: 1140299160}
-  parent: {fileID: 21511752}
-  angleOpen: 90
-  angleClose: 0
+  AngleOpen: 0
+  AngleClose: 90
   speed: 3
-  opening: 0
-  check: 1
+  IsOpen: 0
 --- !u!65 &1140299168
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -5226,13 +5205,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 859642808003540128bab977e3ac5492, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  door: {fileID: 1175166101}
-  parent: {fileID: 21511752}
-  angleOpen: 360
-  angleClose: 290
+  AngleOpen: 0
+  AngleClose: 90
   speed: 3
-  opening: 0
-  check: 0
+  IsOpen: 0
 --- !u!65 &1175166109
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -5713,13 +5689,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3dbfe6d363afe454cbb2358f306ce0b4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  rotate_sensitivity: 0.1
-  speed: 1
   pickedKey: 0
   pressed: 0
   triggered: 0
   maxDistance: 100
   objDistance: -1
+  PlayerCamera: {fileID: 405986080}
+  Body: {fileID: 0}
+  Acceleration: 1
+  MaxSpeed: 20
+  zoom_sensitivity: 0.8
+  Sensitivity: 0
+  RotationSensitivity: 0.8
+  ZoomSensitivity: 0.8
+  JumpAcceleration: 0
 --- !u!136 &1306026272
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -5854,13 +5837,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 859642808003540128bab977e3ac5492, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  door: {fileID: 1319098508}
-  parent: {fileID: 491044199}
-  angleOpen: 360
-  angleClose: 270
+  AngleOpen: 0
+  AngleClose: 90
   speed: 3
-  opening: 0
-  check: 0
+  IsOpen: 0
 --- !u!65 &1319098516
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -5899,13 +5879,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 859642808003540128bab977e3ac5492, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  door: {fileID: 1320669897}
-  parent: {fileID: 491044199}
-  angleOpen: 360
-  angleClose: 270
+  AngleOpen: 0
+  AngleClose: 90
   speed: 3
-  opening: 0
-  check: 0
+  IsOpen: 0
 --- !u!65 &1320669905
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -8638,13 +8615,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 859642808003540128bab977e3ac5492, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  door: {fileID: 1980300221}
-  parent: {fileID: 491044199}
-  angleOpen: 90
-  angleClose: 0
+  AngleOpen: 0
+  AngleClose: 90
   speed: 3
-  opening: 0
-  check: 1
+  IsOpen: 0
 --- !u!65 &1980300229
 BoxCollider:
   m_ObjectHideFlags: 0

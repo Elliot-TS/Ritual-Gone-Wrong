@@ -1,42 +1,45 @@
-/*using System.Collections;
+using System.Collections;
 using System.Collections.Generic;
+using System;
 using UnityEngine;
+using UnityEngine.EventSystems;
 
-public class KeyPickUp : MonoBehaviour
+
+public class KeyPickUp : MonoBehaviour, IPointerClickHandler
 {
     public GameObject obj;
-
-    public bool picked = false;
-    public bool check = false;
 
     void Start()
     {
     }
 
 
-    void Update()
+    bool LookCheck()
     {
-        //Checking the trigger state, whether or not E is pressed
-        check = GameObject.Find("Player").GetComponent<PlayerController>().triggered;
-
         string objCheck = GameObject.Find("Player").GetComponent<PlayerController>().ObjectHit;
         
         if( (objCheck != null) && (objCheck.Equals(obj.name)) )    
-            {}
+            return true;
         else    
+            return false;
+    }
+
+    public void OnPointerClick(PointerEventData eventData)
+    {
+        float dist = Vector3.Distance(GameObject.Find("Player").transform.position, this.transform.position);
+
+        if(dist > 2.5 || dist <= 0)
             return;
 
 
-        float objDistance = GameObject.Find("Player").GetComponent<PlayerController>().objDistance;
-        
-        if( objDistance > 2.5 || objDistance < 0 )     
+        /*if (!LookCheck()) 
         {
             return;
-        }
+        }*/
 
         GameObject.Find("Player").GetComponent<PlayerController>().pickedKey = true;
         Destroy(obj);
 
+        Debug.Log("Clicked Key");
     }
 }
-*/

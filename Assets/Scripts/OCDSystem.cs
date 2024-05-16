@@ -129,7 +129,7 @@ public class OCDSystem : MonoBehaviour
 
     private void UpdateFilters() {
         float anxietyEffectStrength = Mathf.Atan((float)anxiety / 5f) * 2f / Mathf.PI;
-        Debug.Log(anxietyEffectStrength);
+        //Debug.Log(anxietyEffectStrength);
         vignette.intensity.value = anxietyEffectStrength * 0.5f;
         filmGrain.intensity.value = anxietyEffectStrength * 4;
         colorAdjustments.hueShift.value = -anxietyEffectStrength * 190;

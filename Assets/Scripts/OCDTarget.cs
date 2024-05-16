@@ -29,7 +29,7 @@ public class OCDTarget : MonoBehaviour, IPointerClickHandler
     {
         On = true;
         onChange = On;
-        Debug.Log(gameObject);
+        //Debug.Log(gameObject);
         gameObject.GetComponent<Highlight>().On = true;
     }
 
@@ -41,6 +41,11 @@ public class OCDTarget : MonoBehaviour, IPointerClickHandler
     }
     public void OnPointerClick(PointerEventData eventData)
     {
+        float dist = Vector3.Distance(GameObject.Find("Player").transform.position, this.transform.position);
+
+        if(dist > 2.5 || dist <= 0)
+            return;
+
         if (On) parentOCDSystem.ObeyCompulsion();
     }
 }

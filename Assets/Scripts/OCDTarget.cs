@@ -29,7 +29,7 @@ public class OCDTarget : MonoBehaviour, IPointerClickHandler
     {
         On = true;
         onChange = On;
-        Debug.Log(gameObject);
+        //Debug.Log(gameObject);
         gameObject.GetComponent<Highlight>().On = true;
     }
 

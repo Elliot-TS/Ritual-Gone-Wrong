@@ -50,7 +50,7 @@ public class DoorOpen : MonoBehaviour, IPointerClickHandler
         isOpenChange = IsOpen;
         opening = true;
         closing = false;
-        Debug.Log("Opening");
+        //Debug.Log("Opening");
     }
 
     public void Close() {
@@ -58,13 +58,13 @@ public class DoorOpen : MonoBehaviour, IPointerClickHandler
         isOpenChange = IsOpen;
         opening = false;
         closing = true;
-        Debug.Log("Closing");
+        //Debug.Log("Closing");
     }
 
     public void OnPointerClick(PointerEventData eventData)
     {
         if (IsOpen) Close();
         else Open();
-        Debug.Log("Click");
+        Debug.Log("Clicked Door");
     }
 }

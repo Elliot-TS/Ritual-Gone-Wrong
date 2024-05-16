@@ -15,26 +15,26 @@ public class EventClick : MonoBehaviour, IPointerDownHandler, IPointerUpHandler,
     }
     public void OnPointerDown(PointerEventData eventData)
     {
-        Debug.Log("pointer down");
+        //Debug.Log("pointer down");
     }
     public void OnPointerUp(PointerEventData eventData)
     {
-        Debug.Log("pointer up");
+        //Debug.Log("pointer up");
     }
     
     public void OnPointerClick(PointerEventData eventData)
     {
-        Debug.Log("pointer clicked");
+        //Debug.Log("pointer clicked");
     }
     
     public void OnPointerEnter(PointerEventData eventData)
     {
-        Debug.Log("pointer entered something");
+        //Debug.Log("pointer entered something");
     }
     
     public void OnPointerExit(PointerEventData eventData)
     {
-        Debug.Log("pointer exited something");
+        //Debug.Log("pointer exited something");
     }
 
 

@@ -17,15 +17,15 @@ public class OCDSystem : MonoBehaviour
     private LensDistortion lensDistortion;
 
     private bool activeCompulsion = false;
-    public float compulsionStartTime;
-    public float compulsionDuration = 10f;
-    public float compulsionAnxietyRate = 0.7f;
-    public float normalAnxietyRate = 0.1f;
-    public float anxietyDecayRate = 0.2f;
-    public double numRepeats = 4;
-    public int repeatCounter = 0;
-    public double anxiety = 0;
-    public double baseAnxiety = 0;
+    private float compulsionStartTime;
+    private float compulsionDuration = 40f;
+    private float compulsionAnxietyRate = 0.4f;
+    private float normalAnxietyRate = 0.01f;
+    private float anxietyDecayRate = 0.07f;
+    private double numRepeats = 4;
+    private int repeatCounter = 0;
+    private double anxiety = 0;
+    private double baseAnxiety = 0;
 
     // Start is called before the first frame update
     void Start()
@@ -53,6 +53,7 @@ public class OCDSystem : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        Debug.Log("Anxiety: " + anxiety);
         System.Random rnd = new System.Random();
         double rand = rnd.NextDouble();
         bool compulse = rand <= CalculateCompulsionFrequency() * Time.deltaTime;
@@ -80,8 +81,9 @@ public class OCDSystem : MonoBehaviour
         }
     }
     private double CalculateCompulsionFrequency() {
-        return System.Math.Atan(anxiety / 20f) * 2.0/System.Math.PI;
+        return System.Math.Atan(anxiety / 80f) * 2.0/System.Math.PI;
     }
+    
     public void ActivateCompulsion() {
         activeCompulsion = true;
         compulsionStartTime = Time.time;
@@ -93,21 +95,23 @@ public class OCDSystem : MonoBehaviour
         activeCompulsion = false;
         ocdTarget.Disable();
 
+        // Consequence of Obeying compulsions: increase in base anxiety and anxiety rates
+        baseAnxiety += 0.3f;
+        normalAnxietyRate += 0.01f;
+        compulsionAnxietyRate += 0.05f;
+        compulsionDuration += 0.5f;
+        numRepeats += 0.3;
+
         // Consequence of Obeying compulsions: repeats
         if (repeatCounter < numRepeats) {
             repeatCounter++;
             ActivateCompulsion();
         }
         else {
+            Debug.Log("Compulsion Obeyed");
             repeatCounter = 0;
             anxiety = baseAnxiety;
         }
-
-        // Consequence of Obeying compulsions: increase in base anxiety and anxiety rates
-        baseAnxiety += 0.3f;
-        normalAnxietyRate += 0.1f;
-        compulsionAnxietyRate += 0.05f;
-        numRepeats += 0.3;
     }
     public void OvercomeCompulsion()
     {
@@ -118,6 +122,7 @@ public class OCDSystem : MonoBehaviour
         baseAnxiety -= 0.1f;
         normalAnxietyRate -= 0.1f;
         compulsionAnxietyRate -= 0.05f;
+        compulsionDuration -= 0.5f;
         numRepeats -= 0.1;
     }
 
@@ -130,9 +135,9 @@ public class OCDSystem : MonoBehaviour
     private void UpdateFilters() {
         float anxietyEffectStrength = Mathf.Atan((float)anxiety / 5f) * 2f / Mathf.PI;
         //Debug.Log(anxietyEffectStrength);
-        vignette.intensity.value = anxietyEffectStrength * 0.5f;
+        vignette.intensity.value = anxietyEffectStrength * 0.8f;
         filmGrain.intensity.value = anxietyEffectStrength * 4;
-        colorAdjustments.hueShift.value = -anxietyEffectStrength * 190;
+        //colorAdjustments.hueShift.value = -anxietyEffectStrength * 190;
         if (anxietyEffectStrength > 0.5) {
             chromaticAberration.intensity.value = (anxietyEffectStrength*2f - 1f) * 0.9f;
             lensDistortion.intensity.value = (anxietyEffectStrength*2f - 1f) * 0.95f;
@@ -146,8 +151,18 @@ public class OCDSystem : MonoBehaviour
             lensDistortion.yMultiplier.value = 1;
         }
 
+        if (anxietyEffectStrength > 0.6) {
+            colorAdjustments.hueShift.value = -(anxietyEffectStrength - 0.6f) * 1900 / 4f;
+        }
+        else {
+            colorAdjustments.hueShift.value = 0;
+        }
+
         if (anxietyEffectStrength > 0.8) {
             lensDistortion.scale.value = 1f - (anxietyEffectStrength-0.8f)*4f;
+        }
+        else {
+            lensDistortion.scale.value = 1f;
         }
     }
 }

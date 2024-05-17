@@ -82,13 +82,11 @@ public class PlayerController : MonoBehaviour
             
             if(!hitName.Equals(objectHit))
             {
-                Debug.Log(hitName + " was hit from "+ objDistance + ".");
                 objectHit = hitName;
             }
             
             else if(Input.anyKey)
             {
-                Debug.Log(hitName + " was hit from "+ objDistance + ".");
             }
         }
 

@@ -21,7 +21,7 @@ public class OCDSystem : MonoBehaviour
     private float compulsionDuration = 40f;
     private float compulsionAnxietyRate = 0.4f;
     private float normalAnxietyRate = 0.01f;
-    private float anxietyDecayRate = 0.07f;
+    private float anxietyDecayRate = 1.7f;
     private double numRepeats = 4;
     private int repeatCounter = 0;
     private double anxiety = 0;
@@ -120,7 +120,7 @@ public class OCDSystem : MonoBehaviour
         ocdTarget.Disable();
 
         baseAnxiety -= 0.1f;
-        normalAnxietyRate -= 0.1f;
+        // normalAnxietyRate -= 0.01f;
         compulsionAnxietyRate -= 0.05f;
         compulsionDuration -= 0.5f;
         numRepeats -= 0.1;

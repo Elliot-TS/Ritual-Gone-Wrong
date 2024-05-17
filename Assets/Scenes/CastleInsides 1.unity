@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.37311924, g: 0.38073963, b: 0.3587269, a: 1}
+  m_IndirectSpecularColor: {r: 0.37311926, g: 0.38073993, b: 0.35872683, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -1643,37 +1643,10 @@ Rigidbody:
   m_ImplicitCom: 1
   m_ImplicitTensor: 1
   m_UseGravity: 1
-  m_IsKinematic: 1
+  m_IsKinematic: 0
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!114 &457592842
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 457592835}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2f936bac3a7b30711a0d7871866c4fe0, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  On: 0
---- !u!114 &457592843
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 457592835}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3076a5a96eeb3fa4baf81d7e2adc138c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  renderers: []
-  On: 0
 --- !u!1 &460895922
 GameObject:
   m_ObjectHideFlags: 0
@@ -2557,9 +2530,6 @@ PrefabInstance:
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 02ad3051bb8641b9db3cc50404022107, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 1964874883}
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 02ad3051bb8641b9db3cc50404022107, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1964874884}
@@ -5609,10 +5579,10 @@ MonoBehaviour:
   PlayerCamera: {fileID: 405986080}
   Body: {fileID: 0}
   Acceleration: 1
-  MaxSpeed: 1000
-  zoom_sensitivity: 0.8
+  MaxSpeed: 100
+  zoom_sensitivity: 0.83
   Sensitivity: 0
-  RotationSensitivity: 30
+  RotationSensitivity: 1
   ZoomSensitivity: 0.8
   JumpAcceleration: 0
 --- !u!136 &1306026272
@@ -5882,41 +5852,6 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!114 &1365121892
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1365121886}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d4fe86c665f600e79b7fb33811077b84, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  compulsionStartTime: 0
-  compulsionDuration: 10
-  compulsionAnxietyRate: 0.7
-  normalAnxietyRate: 0.1
-  anxietyDecayRate: 0.2
-  numRepeats: 4
-  repeatCounter: 0
-  anxiety: 0
-  baseAnxiety: 0
---- !u!114 &1365121893
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1365121886}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3076a5a96eeb3fa4baf81d7e2adc138c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  renderers: []
-  On: 0
 --- !u!1 &1384101440
 GameObject:
   m_ObjectHideFlags: 0
@@ -7643,12 +7578,6 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 4ccfc24ecacc32b3faa046d4edbe5b65, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1365121888}
-    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 4ccfc24ecacc32b3faa046d4edbe5b65, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 1365121893}
-    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 4ccfc24ecacc32b3faa046d4edbe5b65, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 1365121892}
   m_SourcePrefab: {fileID: 100100000, guid: 4ccfc24ecacc32b3faa046d4edbe5b65, type: 3}
 --- !u!1001 &1698425286
 PrefabInstance:
@@ -9046,12 +8975,6 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 82b3f389af35925b99969c9834b51b44, type: 3}
       insertIndex: -1
       addedObject: {fileID: 457592840}
-    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 82b3f389af35925b99969c9834b51b44, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 457592843}
-    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 82b3f389af35925b99969c9834b51b44, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 457592842}
     - targetCorrespondingSourceObject: {fileID: -8832725297174079640, guid: 82b3f389af35925b99969c9834b51b44, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1146204156}
@@ -9085,15 +9008,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d4fe86c665f600e79b7fb33811077b84, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  compulsionStartTime: 0
-  compulsionDuration: 10
-  compulsionAnxietyRate: 0.7
-  normalAnxietyRate: 0.1
-  anxietyDecayRate: 0.2
-  numRepeats: 4
-  repeatCounter: 0
-  anxiety: 0
-  baseAnxiety: 0
 --- !u!4 &1937029324
 Transform:
   m_ObjectHideFlags: 0
@@ -9167,33 +9081,6 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 02ad3051bb8641b9db3cc50404022107, type: 3}
   m_PrefabInstance: {fileID: 591192235}
   m_PrefabAsset: {fileID: 0}
---- !u!54 &1964874883
-Rigidbody:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1964874879}
-  serializedVersion: 4
-  m_Mass: 1
-  m_Drag: 0
-  m_AngularDrag: 0.05
-  m_CenterOfMass: {x: 0, y: 0, z: 0}
-  m_InertiaTensor: {x: 1, y: 1, z: 1}
-  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ImplicitCom: 1
-  m_ImplicitTensor: 1
-  m_UseGravity: 1
-  m_IsKinematic: 0
-  m_Interpolate: 0
-  m_Constraints: 0
-  m_CollisionDetection: 0
 --- !u!65 &1964874884
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -9213,8 +9100,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 0.01493752, y: 0.020399997, z: 0.007}
-  m_Center: {x: -0.00035568493, y: 0.00033105395, z: 0.0034}
+  m_Size: {x: 0.014937519, y: 0.020399997, z: 0.004652004}
+  m_Center: {x: -0.0003556849, y: 0.0003310541, z: 0.002226003}
 --- !u!1 &2056997460
 GameObject:
   m_ObjectHideFlags: 0

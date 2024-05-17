@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.37311926, g: 0.38073993, b: 0.35872683, a: 1}
+  m_IndirectSpecularColor: {r: 0.37311924, g: 0.38073963, b: 0.3587269, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -1713,7 +1713,7 @@ Transform:
   m_GameObject: {fileID: 460895922}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 7.529, y: 1.274, z: 41.533}
+  m_LocalPosition: {x: 7.13, y: 2.956, z: 41.208}
   m_LocalScale: {x: 0.0012524682, y: 0.0012524682, z: 0.0012524682}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -5609,10 +5609,10 @@ MonoBehaviour:
   PlayerCamera: {fileID: 405986080}
   Body: {fileID: 0}
   Acceleration: 1
-  MaxSpeed: 30
+  MaxSpeed: 1000
   zoom_sensitivity: 0.8
   Sensitivity: 0
-  RotationSensitivity: 1
+  RotationSensitivity: 30
   ZoomSensitivity: 0.8
   JumpAcceleration: 0
 --- !u!136 &1306026272
